@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body
+{
+    font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+    color: hsl(238, 29%, 16%);
+}
+
+.background
+{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+.background img
+{
+    position: absolute;
+    top: 44%;
+    left: 9%;
+    z-index: 1;
+    max-width: 100%;
+    width: calc(15% - 2rem);
+    height: auto;
+}
+.container
+{
+    max-width: 1000px;
+    max-height: 500px;
+    width: calc(100vw - 30%);
+    height: calc(100vh - 30%);
+    background: hsl(0, 0%, 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* padding: 5rem 7rem; */
+    border-radius: 2rem;
+    box-shadow: 1px 10px 15px 3px rgba(0,0,0,0.2);
+    display: flex;
+    flex: 1 1 100%;
+    overflow: hidden;
+}
+.col
+{
+    width: 50%;
+}
+.image
+{
+    background: url('images/bg-pattern-desktop.svg') no-repeat;
+    background-position: calc(100% - 9.5rem) calc(100% + 12.5rem);
+    position: relative;
+}
+.image img
+{
+    position: absolute;
+    top: 15%;
+    left: -14%;
+    max-width: 100%;
+    width: calc(100% - 4rem);
+    height: auto;
+}
+
+.accordion
+{
+    padding: 4rem 8rem 4rem 0;
+}
+.accordion h3
+{
+    font-size: calc(1vw + 1.5rem);
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin: 2rem 0;
+}
+.accordion ul
+{
+    list-style: none;
+}
+/* Function */
+.item > p, .item input[type="checkbox"]
+{
+    display: none;
+}
+.item input:checked ~ p
+{
+    display: block;
+}
+
+.item
+{
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+    transition: all 0.25s;
+}
+.item label
+{
+    display: flex;
+    justify-content: space-between;
+}
+.item label:hover
+{
+    color: hsl(14, 88%, 65%);
+}
+.item label::after
+{
+    content: "\276F";
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    color: hsl(14, 88%, 65%);
+    transition: all 0.25s;
+}
+.item input:checked ~ label
+{
+    font-weight: 700;
+}
+.item input:checked ~ label:hover
+{
+    color: hsl(238, 29%, 16%);
+}
+.item input:checked ~ label::after
+{
+    transform: rotate(90deg);
+}
+.item p
+{
+    padding-top: 1rem;
+}
+
+@media screen and (max-width: 1024px)
+{
+    html, body
+    {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 768px)
+{
+    .accordion
+    {
+        padding: 8rem 6rem 8rem 0;
+    }
+}
+@media screen and (max-width: 500px)
+{
+    .container
+    {
+        display: block;
+        overflow: visible;
+        height: auto;
+        padding-bottom: 4rem;
+    }
+    .col
+    {
+        width: 100%;
+    }
+    .image
+    {
+        background-position: 10vw -30vw;
+        background-size: 70%;
+        height: 100px;
+    }
+    .image img
+    {
+        top: -10vh;
+        left: 17%;
+        max-width: calc(80% - 4rem);
+    }
+    .background > img
+    {
+        top: 48vw;
+        left: 25%;
+        width: calc(20% - 1rem);
+    }
+    .accordion
+    {
+        padding: 0 8%;
+    }
+    .accordion h3
+    {
+        text-align: center;
+        font-size: calc(4vw + 1rem);
+        letter-spacing: 0;
+        margin: 0;
+    }
+
+}
